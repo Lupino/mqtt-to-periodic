@@ -1,0 +1,63 @@
+name:                mqtt-to-periodic
+version:             0.1.0.0
+github:              "Lupino/mqtt-to-periodic"
+license:             BSD3
+author:              "Lupino"
+maintainer:          "lmjubuntu@gmail.com"
+copyright:           "MIT"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/Lupino/mqtt-to-periodic#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  dependencies:
+  - net-mqtt
+  - entropy
+  - network-uri
+  - bytestring
+  - hslogger
+  - aeson
+  - text
+  - periodic-client
+  - periodic-common
+  - cryptohash
+  - byteable
+
+  - optparse-applicative
+  - metro
+
+executables:
+  mqtt-to-periodic-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - mqtt-to-periodic
+
+tests:
+  mqtt-to-periodic-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - mqtt-to-periodic

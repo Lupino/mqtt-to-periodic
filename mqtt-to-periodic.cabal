@@ -1,0 +1,77 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 1d4033f6b8d46d70bb40eb8679b07bf3a6b97a7eac922807fde0f92772632459
+
+name:           mqtt-to-periodic
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/Lupino/mqtt-to-periodic#readme>
+homepage:       https://github.com/Lupino/mqtt-to-periodic#readme
+bug-reports:    https://github.com/Lupino/mqtt-to-periodic/issues
+author:         Lupino
+maintainer:     lmjubuntu@gmail.com
+copyright:      MIT
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/Lupino/mqtt-to-periodic
+
+library
+  exposed-modules:
+      Lib
+      MTP.MQTT
+      MTP.Types
+  other-modules:
+      Paths_mqtt_to_periodic
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , byteable
+    , bytestring
+    , cryptohash
+    , entropy
+    , hslogger
+    , metro
+    , net-mqtt
+    , network-uri
+    , optparse-applicative
+    , periodic-client
+    , periodic-common
+    , text
+  default-language: Haskell2010
+
+executable mqtt-to-periodic-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_mqtt_to_periodic
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , mqtt-to-periodic
+  default-language: Haskell2010
+
+test-suite mqtt-to-periodic-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_mqtt_to_periodic
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , mqtt-to-periodic
+  default-language: Haskell2010
