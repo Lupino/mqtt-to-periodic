@@ -41,7 +41,7 @@ library:
   - metro
 
 executables:
-  mqtt-to-periodic-exe:
+  mqtt-to-periodic:
     main:                Main.hs
     source-dirs:         app
     ghc-options:

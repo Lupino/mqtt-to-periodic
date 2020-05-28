@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1d4033f6b8d46d70bb40eb8679b07bf3a6b97a7eac922807fde0f92772632459
+-- hash: 22cdd7e33f26fd56a5e177567ee2cd17a8ea9547d039e1d03fd13c5398d2a707
 
 name:           mqtt-to-periodic
 version:        0.1.0.0
@@ -51,7 +51,7 @@ library
     , text
   default-language: Haskell2010
 
-executable mqtt-to-periodic-exe
+executable mqtt-to-periodic
   main-is: Main.hs
   other-modules:
       Paths_mqtt_to_periodic
