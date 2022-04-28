@@ -13,7 +13,7 @@ import           Data.Aeson           (ToJSON (..), encode, object, (.=))
 import           Data.ByteString.Lazy (ByteString, toStrict)
 import           Data.String          (fromString)
 import           Data.Text.Encoding   (decodeUtf8)
-import           Network.MQTT.Client  (Topic)
+import           Network.MQTT.Topic   (Topic, unTopic)
 import           Periodic.Types       (JobName (..), Workload (..))
 
 data Msg = Msg
@@ -23,7 +23,10 @@ data Msg = Msg
     deriving (Show)
 
 instance ToJSON Msg where
-  toJSON Msg {..} = object [ "topic" .= topic, "payload" .= decodeUtf8 (toStrict payload) ]
+  toJSON Msg {..} = object
+    [ "topic" .= unTopic topic
+    , "payload" .= decodeUtf8 (toStrict payload)
+    ]
 
 msg :: Topic -> ByteString -> Msg
 msg = Msg

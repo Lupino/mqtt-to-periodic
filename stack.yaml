@@ -17,7 +17,7 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: lts-15.14
+resolver: lts-19.4
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -35,8 +35,8 @@ packages:
 # forks / in-progress versions pinned to a git hash. For example:
 #
 extra-deps:
-- git: https://github.com/Lupino/net-mqtt.git
-  commit: 1a0fd6397756eb0a88cb15c38c268dede02c3bcd
+- git: https://github.com/dustin/mqtt-hs.git
+  commit: 330cf6a8a491221a0acc52679520b10947f3700e
 - git: https://github.com/Lupino/haskell-periodic.git
   commit: 9500307f32e2f74634e74d3d061237e87cabd267
   subdirs:

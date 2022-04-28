@@ -19,10 +19,10 @@ import           Periodic.Types      (FuncName)
 import           System.Log.Logger   (Priority (INFO), errorM)
 
 data Options = Options
-    { funcName  :: String
-    , host      :: String
-    , mqtt      :: String
-    , topicList :: [Text]
+    { funcName :: String
+    , host     :: String
+    , mqtt     :: String
+    , subList  :: [Text]
     }
     deriving (Show)
 
@@ -59,7 +59,8 @@ program Options {..} = do
     Nothing -> errorM "Lib" "Invalid mqtt uri"
     Just mqttURI -> do
       env <- openPool host 100
-      runMQTT mqttURI topicList $ \topic -> void . processMsg env (fromString funcName) . msg topic
+      runMQTT mqttURI subList $ \sub ->
+        void . processMsg env (fromString funcName) . msg sub
 
 processMsg :: ClientPoolEnv -> FuncName -> Msg -> IO Bool
 processMsg env func m =
