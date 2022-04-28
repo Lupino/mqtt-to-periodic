@@ -64,4 +64,4 @@ program Options {..} = do
 
 processMsg :: ClientPoolEnv -> FuncName -> Msg -> IO Bool
 processMsg env func m =
-  runClientPoolM env $ submitJob func (hashMsg m) (Just $ encodeMsg m) Nothing
+  runClientPoolM env $ submitJob func (hashMsg m) (encodeMsg m) 0 0

@@ -38,18 +38,16 @@ extra-deps:
 - git: https://github.com/dustin/mqtt-hs.git
   commit: 330cf6a8a491221a0acc52679520b10947f3700e
 - git: https://github.com/Lupino/haskell-periodic.git
-  commit: 9500307f32e2f74634e74d3d061237e87cabd267
+  commit: 7603c6f99a94682ec904295e5da9eb4f52c2b627
   subdirs:
   - periodic-client
   - periodic-common
 - git: https://github.com/Lupino/metro.git
-  commit: bd50f7c6b6aec42acd1696b586a59c287177f709
+  commit: 2e8a036168da13f90dbf8fc3b59d95cf5315949d
   subdirs:
   - .
+  - map-io
   - metro-socket
-  - metro-transport-xor
-  - metro-transport-tls
-  - metro-transport-websockets
 
 # Override default flag values for local packages and extra-deps
 # flags: {}
