@@ -35,6 +35,7 @@ library:
   - periodic-client
   - periodic-common
   - cryptohash
+  - base64-bytestring
 
   - optparse-applicative
   - metro

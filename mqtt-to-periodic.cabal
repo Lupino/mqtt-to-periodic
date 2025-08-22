@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.38.1.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9e439981db931ac3996de63daadfcae2285cd658a69a077ed356a65370e767ff
+-- hash: 17a5c69c4888cbcb65ae1740eb8f35066d679dc3db7b2783cf400c0871ab9e84
 
 name:           mqtt-to-periodic
 version:        0.1.0.0
@@ -37,6 +37,7 @@ library
   build-depends:
       aeson
     , base >=4.7 && <5
+    , base64-bytestring
     , bytestring
     , cryptohash
     , entropy
