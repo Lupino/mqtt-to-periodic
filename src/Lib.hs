@@ -22,6 +22,7 @@ data Options = Options
     { funcName :: String
     , host     :: String
     , mqtt     :: String
+    , poolSize :: Int
     , subList  :: [Text]
     }
     deriving (Show)
@@ -42,6 +43,10 @@ parser = Options
                  <> metavar "MQTTURI"
                  <> help "mqtt server."
                  <> value "mqtt://localhost:1883")
+  <*> option auto (long "pool-size"
+                 <> metavar "POOLSIZE"
+                 <> help "Resource pool size."
+                 <> value 100)
   <*> some (strArgument (help "subscribe topics"))
 
 someFunc :: IO ()
@@ -58,7 +63,7 @@ program Options {..} = do
   case parseURI mqtt of
     Nothing -> errorM "Lib" "Invalid mqtt uri"
     Just mqttURI -> do
-      env <- openPool host 100
+      env <- openPool host poolSize
       runMQTT mqttURI subList $ \sub ->
         void . processMsg env (fromString funcName) . msg sub
 
