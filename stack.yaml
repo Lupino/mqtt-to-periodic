@@ -17,7 +17,7 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: lts-24.0
+resolver: lts-24.23
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -36,14 +36,14 @@ packages:
 #
 extra-deps:
 - git: https://github.com/dustin/mqtt-hs.git
-  commit: 7ec6ff33fb762e65fca83036a1e1ffff7e0a0d16
+  commit: ae032e591f1f7e4b4138d569cdf77b83d1ddc288
 - git: https://github.com/Lupino/haskell-periodic.git
-  commit: 93629784332d81ecfa50de55c324eb98b553677e
+  commit: 7bf303f298c997df4fa66cb8ecc0931813ec97e2
   subdirs:
   - periodic-client
   - periodic-common
 - git: https://github.com/Lupino/metro.git
-  commit: 6518b7e66e6f5acf6a6c8d28bed6ebcd184a73d5
+  commit: 2521ea32857e5ff6ff2d9a99b1ddacac35903c88
   subdirs:
   - .
   - map-io
