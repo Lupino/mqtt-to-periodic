@@ -5,18 +5,18 @@ module Lib
   ( someFunc
   ) where
 
-import           Control.Monad       (void)
 import           Data.String         (fromString)
 import           Data.Text           (Text)
 import           Metro.Utils         (setupLog)
 import           MTP.MQTT            (runMQTT)
 import           MTP.Types
+import           Network.MQTT.Topic  (unTopic)
 import           Network.URI         (parseURI)
 import           Options.Applicative
 import           Periodic.ClientPool (ClientPoolEnv, openPool, runClientPoolM,
                                       submitJob)
 import           Periodic.Types      (FuncName)
-import           System.Log.Logger   (Priority (INFO), errorM)
+import           System.Log.Logger   (Priority (INFO), errorM, infoM)
 
 data Options = Options
     { funcName :: String
@@ -64,8 +64,9 @@ program Options {..} = do
     Nothing -> errorM "Lib" "Invalid mqtt uri"
     Just mqttURI -> do
       env <- openPool host poolSize
-      runMQTT mqttURI subList $ \sub ->
-        void . processMsg env (fromString funcName) . msg sub
+      runMQTT mqttURI subList $ \sub payload -> do
+        result <- processMsg env (fromString funcName) (msg sub payload)
+        infoM "Lib" $ "topic=" ++ show (unTopic sub) ++ ", result=" ++ show result
 
 processMsg :: ClientPoolEnv -> FuncName -> Msg -> IO Bool
 processMsg env func m =
