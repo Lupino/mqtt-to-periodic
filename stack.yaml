@@ -38,12 +38,12 @@ extra-deps:
 - git: https://github.com/dustin/mqtt-hs.git
   commit: ae032e591f1f7e4b4138d569cdf77b83d1ddc288
 - git: https://github.com/Lupino/haskell-periodic.git
-  commit: 7bf303f298c997df4fa66cb8ecc0931813ec97e2
+  commit: 218bb553ead8125d1a3783f65665b9985c99bbc1
   subdirs:
   - periodic-client
   - periodic-common
 - git: https://github.com/Lupino/metro.git
-  commit: 2521ea32857e5ff6ff2d9a99b1ddacac35903c88
+  commit: c9c5e1c109e23116c8405d7371c43af7d50fd888
   subdirs:
   - .
   - map-io

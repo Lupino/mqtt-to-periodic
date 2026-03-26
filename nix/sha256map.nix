@@ -1,5 +1,5 @@
 {
-  "https://github.com/Lupino/haskell-periodic.git"."7bf303f298c997df4fa66cb8ecc0931813ec97e2" = "0likzchi664gsxk0ysxdhf9mwnq6ih9v2d75zvfqc7hgxzgxvb4y";
-  "https://github.com/Lupino/metro.git"."2521ea32857e5ff6ff2d9a99b1ddacac35903c88" = "1kay1syr09ifkcy5s05gihikmfd6s8nk9h50nlwip5jivs88n9i7";
+  "https://github.com/Lupino/haskell-periodic.git"."218bb553ead8125d1a3783f65665b9985c99bbc1" = "1f9sr3n2cx86f5iaz0mc2gfzvx4z0y3iabm7k2snzfj1qmm834c2";
+  "https://github.com/Lupino/metro.git"."c9c5e1c109e23116c8405d7371c43af7d50fd888" = "0gy0wimdq1fr89bd342ydr8v1qa3xahq8ykxgn5qc9883pjd6c02";
   "https://github.com/dustin/mqtt-hs.git"."ae032e591f1f7e4b4138d569cdf77b83d1ddc288" = "1crsnircfljikc96jz76lp9xwm7a2dhn7rkn8chwdjicga82wap8";
 }
